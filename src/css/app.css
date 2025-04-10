@@ -1,0 +1,1305 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
+body {
+  margin: 0;
+  padding: 0 4%;
+  box-sizing: border-box;
+  font-family: "Signika Negative", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+}
+nav h1 {
+  font-size: 2.1rem;
+  cursor: pointer;
+  letter-spacing: 0.3rem;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  gap: 3rem;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+nav ul li a:hover {
+  color: #caa945;
+}
+nav ul .logout {
+  cursor: pointer;
+  color: rgb(170, 12, 12);
+}
+nav ul .logout:hover {
+  color: #caa945;
+  transition: all 0.5s;
+}
+nav button {
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+}
+nav button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+nav button a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav_mobile {
+  display: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+.ul_mobile {
+  max-height: 100vh;
+  min-height: 100vh;
+  min-width: 100%;
+  margin-left: -2%;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  background-color: #9AC5E5;
+}
+.ul_mobile img {
+  transition: all 1s;
+  position: absolute;
+  top: 1%;
+  right: 3%;
+  height: 2rem;
+  width: 2rem;
+}
+.ul_mobile ul {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.9rem;
+}
+.ul_mobile ul li {
+  list-style: none;
+}
+.ul_mobile ul li a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.ul_mobile ul li a:hover {
+  color: #caa945;
+}
+
+.pop_nav_p {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.pop_nav_p:hover .pop_nav {
+  display: flex;
+}
+.pop_nav_p p {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.pop_nav_p p img {
+  width: 2rem;
+  height: 2rem;
+}
+.pop_nav_p .pop_nav {
+  gap: 1rem;
+  position: absolute;
+  top: 3.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 1rem;
+  z-index: 299;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 6px;
+  background: #FFFFFF;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.24);
+  width: 15vw;
+  display: none;
+}
+.pop_nav_p .pop_nav p {
+  margin: 0;
+  transition: all 0.5s;
+}
+.pop_nav_p .pop_nav p:hover {
+  color: #C98C9A;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    padding: 0 2%;
+  }
+  nav {
+    display: none;
+  }
+  .nav_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+  }
+  .nav_mobile img {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+.hero {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 2rem 0;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+.hero h3 {
+  margin: 0%;
+  margin-top: 1rem;
+}
+.hero .first {
+  margin: 0;
+  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  width: 60%;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+.hero .second {
+  margin: 0;
+  font-size: 3rem;
+  width: 90%;
+  font-weight: 500;
+}
+.hero .buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.hero .buttons button {
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+}
+.hero .buttons button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+
+.login_page {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: 2rem;
+}
+.login_page .l_sec1 {
+  height: 100%;
+}
+.login_page .l_sec1 .logo_nav {
+  height: 3rem;
+  margin-top: -3%;
+  font-size: 2.5rem;
+  color: #caa945;
+  letter-spacing: 0.3rem;
+  font-size: 1.2rem;
+}
+.login_page .l_sec1 .admin_nav {
+  height: 2.8rem;
+  margin-top: -4%;
+}
+.login_page .l_sec1 section {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+}
+.login_page .l_sec1 section .txt {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.login_page .l_sec1 section .txt h1 {
+  margin: 0;
+}
+.login_page .l_sec1 section .txt label {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.login_page .l_sec1 section .txt input {
+  width: 100%;
+  height: 2.6rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.login_page .l_sec1 section .txt button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+  width: 100%;
+  border-radius: 0.3rem;
+  padding: 0.8rem 0%;
+}
+.login_page .l_sec1 section .txt button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+.login_page .l_sec1 section .txt .pp {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+.login_page .l_sec1 section .txt .pp span {
+  font-weight: 600;
+  cursor: pointer;
+}
+.login_page .l_sec1 section .txt .ppp {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: -1.5rem;
+  padding-bottom: 2rem;
+}
+.login_page .l_sec1 section .txt .ppp span {
+  font-weight: 600;
+  cursor: pointer;
+}
+.login_page .l_sec2 {
+  background-image: url("/public/pics/blog.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .login_page {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .login_page .l_sec1 section {
+    height: 80%;
+    width: 100%;
+  }
+  .login_page .l_sec1 section .txt {
+    height: 80%;
+    width: 80%;
+  }
+  .login_page .l_sec1 section .txt button {
+    padding: 1rem 0%;
+  }
+  .login_page .l_sec2 {
+    display: none;
+  }
+}
+.sign_page {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: 2rem;
+}
+.sign_page .sign_sec_1 {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+.sign_page .sign_sec_1::-webkit-scrollbar {
+  display: none;
+}
+.sign_page .sign_sec_1 .logo_nav {
+  height: 3rem;
+  margin-top: -2%;
+  position: sticky;
+  top: 0;
+  font-size: 2.5rem;
+  color: #caa945;
+  letter-spacing: 0.3rem;
+  font-size: 1.1rem;
+}
+.sign_page .sign_sec_1 section {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+}
+.sign_page .sign_sec_1 section .sign_form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-start;
+}
+.sign_page .sign_sec_1 section .sign_form h1 {
+  margin: 0;
+}
+.sign_page .sign_sec_1 section .sign_form label {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.sign_page .sign_sec_1 section .sign_form input {
+  width: 100%;
+  height: 2.6rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.sign_page .sign_sec_1 section .sign_form button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+  width: 100%;
+  border-radius: 0.3rem;
+  padding: 0.8rem 0%;
+}
+.sign_page .sign_sec_1 section .sign_form button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+.sign_page .sign_sec_1 section .sign_form .pp {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+.sign_page .sign_sec_1 section .sign_form .pp span {
+  font-weight: 600;
+  cursor: pointer;
+}
+.sign_page .sign_sec_1 section .sign_form .ppp {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: -1.5rem;
+  padding-bottom: 2rem;
+}
+.sign_page .sign_sec_1 section .sign_form .ppp span {
+  font-weight: 600;
+  cursor: pointer;
+}
+.sign_page .sign_sec_1 section .sign_form input[type=number]::-webkit-inner-spin-button {
+  display: none;
+}
+.sign_page .sign_sec_2 {
+  background-image: url("/public/pics/blog.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .sign_page {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .sign_page .sign_sec_1 section {
+    width: 100%;
+  }
+  .sign_page .sign_sec_1 section .sign_form {
+    width: 80%;
+  }
+  .sign_page .sign_sec_1 section .sign_form button {
+    padding: 1rem 0%;
+  }
+  .sign_page .sign_sec_2 {
+    display: none;
+  }
+}
+.modal {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  z-index: 766;
+  position: absolute;
+  width: 50vw;
+  height: 40vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.modal span {
+  color: #caa945;
+}
+.modal .btn button {
+  margin-left: 1rem;
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+}
+.modal .btn button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+.modal .btn button:nth-child(2) {
+  background-color: #b41137;
+}
+.modal .btn button:nth-child(2):hover {
+  background-color: #252525;
+}
+
+.nav_admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+}
+.nav_admin ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  gap: 2rem;
+}
+.nav_admin ul li {
+  list-style: none;
+}
+.nav_admin ul li a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.nav_admin ul li a:hover {
+  color: #caa945;
+}
+.nav_admin h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  cursor: pointer;
+  letter-spacing: 0.2rem;
+}
+.nav_admin button {
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+}
+.nav_admin button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.parent div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.parent div:hover {
+  cursor: pointer;
+}
+.parent .div1 {
+  grid-column: span 3/span 3;
+  grid-row: span 3/span 3;
+}
+.parent .div2 {
+  grid-column: span 2/span 2;
+  grid-row: span 3/span 3;
+  grid-column-start: 4;
+}
+.parent .div3 {
+  grid-column: span 3/span 3;
+  grid-column-start: 6;
+  background-color: #caa945;
+}
+.parent .div5 {
+  grid-row: span 4/span 4;
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+.parent .div6 {
+  grid-column: span 2/span 2;
+  grid-row: span 4/span 4;
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+.parent .div7 {
+  grid-column: span 2/span 2;
+  grid-column-start: 4;
+  grid-row-start: 4;
+}
+.parent .div8 {
+  grid-column: span 3/span 3;
+  grid-row: span 3/span 3;
+  grid-column-start: 6;
+  grid-row-start: 2;
+}
+.parent .div9 {
+  grid-column: span 5/span 5;
+  grid-row: span 3/span 3;
+  grid-column-start: 4;
+  grid-row-start: 5;
+}
+
+.chatbot-container {
+  margin-top: 2rem;
+  width: 100%;
+  height: 80vh;
+  max-height: 100vh;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+}
+.chatbot-container .chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  background-color: #caa945;
+  border-bottom: 1px solid #eee;
+  gap: 0.5rem;
+}
+.chatbot-container .chatbot-header .robo {
+  font-size: 1.5rem;
+}
+.chatbot-container .chatbot-header .chatbot-header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.chatbot-container .output {
+  height: 100%;
+  overflow: scroll;
+  padding: 2rem;
+}
+.chatbot-container .output::-webkit-scrollbar {
+  display: none;
+}
+.chatbot-container .chatbot-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  gap: 1rem;
+}
+.chatbot-container .chatbot-input input {
+  width: 60%;
+  padding: 0.9rem 1rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  font-size: 1rem;
+}
+.chatbot-container .chatbot-input button {
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  padding: 0.9rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  font-size: 1rem;
+}
+.chatbot-container .chatbot-input button:hover {
+  background-color: black;
+  color: #caa945;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f0f4f8;
+}
+.dashboard .sidebar {
+  width: 260px;
+  background: #0f172a;
+  color: white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard .sidebar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  color: #38bdf8;
+}
+.dashboard .sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.dashboard .sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.75rem;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.dashboard .sidebar nav ul li:hover {
+  background: #1e293b;
+}
+.dashboard .sidebar nav ul li span {
+  flex: 1;
+}
+.dashboard .main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.dashboard .main-content .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.dashboard .main-content .header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+.dashboard .main-content .header p {
+  margin-top: 0.2rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+.dashboard .main-content .header .notification-icon {
+  background: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 0 0 2px #38bdf8;
+  color: #0f172a;
+  cursor: pointer;
+}
+.dashboard .main-content .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.dashboard .main-content .cards .card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.dashboard .main-content .cards .card h3 {
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+.dashboard .main-content .cards .card p {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.doctor-card-modern {
+  background: linear-gradient(135deg, #caa945, #eedc9a);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.doctor-card-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+.doctor-card-modern .doctor-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.doctor-card-modern .doctor-header .doctor-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1.5rem;
+}
+.doctor-card-modern .doctor-header .doctor-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.doctor-card-modern .doctor-header .doctor-header-details h2 {
+  margin-bottom: 0.2rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+.doctor-card-modern .doctor-header .doctor-header-details .specialty {
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.doctor-card-modern .doctor-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+.doctor-card-modern .doctor-body .bio {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+.doctor-card-modern .doctor-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.doctor-card-modern .doctor-footer button {
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+  padding: 0.8rem 0rem;
+  font-size: 0.8rem;
+  width: 50%;
+}
+.doctor-card-modern .doctor-footer button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+.doctor-card-modern .doctor-footer .contact-info p {
+  color: #007bff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+@media (max-width: 400px) {
+  .doctor-card-modern {
+    width: 90%;
+    margin: 1rem auto;
+  }
+}
+
+.doclist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.schedule-container {
+  height: 80vh;
+  width: 80vw;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.schedule-container .status-banner {
+  position: absolute;
+  top: 2.1rem;
+  right: 4.5rem;
+  background-color: #ffc107;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.schedule-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+.schedule-container .message {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+.schedule-container .message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+.schedule-container .message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.schedule-container form {
+  display: flex;
+  flex-direction: column;
+}
+.schedule-container form .form-group {
+  margin-bottom: 1rem;
+}
+.schedule-container form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+.schedule-container form .form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.schedule-container form button {
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+}
+.schedule-container form button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+
+.doctor-detail-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.doctor-detail-page .doctor-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.doctor-detail-page .doctor-header .doctor-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 2rem;
+}
+.doctor-detail-page .doctor-header .doctor-info h1 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.doctor-detail-page .doctor-header .doctor-info .specialty,
+.doctor-detail-page .doctor-header .doctor-info .contact {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.doctor-detail-page .doctor-header .doctor-info .doctor-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.doctor-detail-page .doctor-header .doctor-info .doctor-buttons button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.doctor-detail-page .doctor-header .doctor-info .doctor-buttons button.book-appointment {
+  background-color: #007bff;
+  color: white;
+}
+.doctor-detail-page .doctor-header .doctor-info .doctor-buttons button.book-appointment:hover {
+  background-color: #0056b3;
+}
+.doctor-detail-page .doctor-header .doctor-info .doctor-buttons button.schedule-appointment {
+  background-color: #28a745;
+  color: white;
+}
+.doctor-detail-page .doctor-header .doctor-info .doctor-buttons button.schedule-appointment:hover {
+  background-color: #218838;
+}
+.doctor-detail-page .doctor-header .doctor-info .doctor-buttons button.email {
+  background-color: #ffc107;
+  color: #333;
+}
+.doctor-detail-page .doctor-header .doctor-info .doctor-buttons button.email:hover {
+  background-color: #e0a800;
+}
+.doctor-detail-page .doctor-bio,
+.doctor-detail-page .doctor-reviews {
+  margin-bottom: 2rem;
+}
+.doctor-detail-page .doctor-bio h2,
+.doctor-detail-page .doctor-reviews h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+.doctor-detail-page .doctor-bio p,
+.doctor-detail-page .doctor-reviews p {
+  color: #555;
+  line-height: 1.6;
+}
+.doctor-detail-page .doctor-reviews .review {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.doctor-detail-page .doctor-reviews .review .review-text {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.doctor-detail-page .doctor-reviews .review .review-author {
+  font-weight: bold;
+  text-align: right;
+  color: #777;
+}
+@media (max-width: 600px) {
+  .doctor-detail-page {
+    padding: 1rem;
+  }
+  .doctor-detail-page .doctor-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .doctor-detail-page .doctor-header .doctor-image {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .doctor-detail-page .doctor-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.popup-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 300px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.blog-page {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 2rem;
+}
+.blog-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.blog-page .blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.blog-page .blog-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #caa945;
+}
+.blog-page .blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.blog-page .blog-card .blog-image {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blog-page .blog-card .blog-content {
+  padding: 1.5rem;
+}
+.blog-page .blog-card .blog-content h2 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.blog-page .blog-card .blog-content .blog-author {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.blog-page .blog-card .blog-content .blog-summary {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.appointment-list-page {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 2rem;
+}
+.appointment-list-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.appointment-list-page .appointment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+.appointment-list-page .appointment-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  position: relative;
+}
+.appointment-list-page .appointment-card p {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+.appointment-list-page .appointment-card .cancel-button {
+  padding: 0.8rem 1.7rem;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #caa945;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  font-weight: 600;
+  gap: 0.8rem !important;
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+}
+.appointment-list-page .appointment-card .cancel-button:hover {
+  background-color: #252525;
+  color: #caa945;
+}
+.appointment-list-page .appointment-card .status-banner {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.appointment-list-page .appointment-card .status-banner span {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+.appointment-list-page .appointment-card .status-banner .accepted {
+  background-color: #28a745;
+  color: white;
+}
+.appointment-list-page .appointment-card .status-banner .rejected {
+  background-color: #dc3545;
+  color: white;
+}
+.appointment-list-page .appointment-card .status-banner .pending {
+  background-color: #ffc107;
+  color: #333;
+}
+.appointment-list-page .loading {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.doctor-reviews-page {
+  padding: 1rem 2rem;
+}
+.doctor-reviews-page h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.doctor-reviews-page .reviews-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.doctor-reviews-page .review-card {
+  background: #ffffff;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: all 0.3s ease-in-out;
+}
+.doctor-reviews-page .review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+.doctor-reviews-page .review-card .review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.doctor-reviews-page .review-card .review-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+.doctor-reviews-page .review-card .review-header .rating {
+  background-color: #facc15;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #1f2937;
+}
+.doctor-reviews-page .review-card .service {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+.doctor-reviews-page .review-card .date {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+.doctor-reviews-page .review-card .comment {
+  font-size: 1rem;
+  color: #334155;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.doctor-reviews-page .review-card .comment::before {
+  content: "“";
+  font-size: 2rem;
+  color: #94a3b8;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+.doctor-reviews-page .review-card .review-details {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.doctor-reviews-page .review-card .review-details p {
+  font-size: 0.9rem;
+  color: #475569;
+}
+.doctor-reviews-page .review-card .review-details p strong {
+  color: #1e293b;
+  font-weight: 600;
+}/*# sourceMappingURL=app.css.map */
