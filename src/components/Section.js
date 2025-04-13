@@ -12,7 +12,7 @@ const Section = () => {
     <div class="div1" onClick={()=>navigate("/appointments")}> 
         <h1>View Appointments</h1>       
         </div>
-    <div class="div2"><h1>Reports</h1></div>
+    <div class="div2" onClick={()=>navigate("/report")}><h1>Reports</h1></div>
     <div class="div3"><h1>Features</h1></div>
     <div class="div5" onClick={()=>navigate("/blog")}><h1>Blogs</h1></div>
     <div class="div6" onClick={()=>navigate("/chat")}><h1>Chat with ChatBot</h1></div>

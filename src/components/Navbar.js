@@ -40,7 +40,7 @@ const Navbar = () => {
     </div>
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/doctors">Doctors</a></li>
+        <li><a href="/report">Reports</a></li>
         <li><a href="/features">Features</a></li>
         <li><a href="/chat">ChatBot</a></li>
         <li><a href="/list">Doctor List</a></li>
@@ -53,7 +53,7 @@ const Navbar = () => {
 
 <div className="nav_mobile">
         <div className="nav_logo">
-        <h1>DCSA</h1>
+        <h1>HealthCare</h1>
          </div>
         <div className="icon" onClick={()=>setNav(!nav)}>
             <img src="/icons/menu.png" alt="menu" />
@@ -62,13 +62,13 @@ const Navbar = () => {
     </div>
 
    <div className="ul_mobile" style={{display:nav?"flex":"none"}} >
-    <img src="/icons/cancel.png" alt="cancel" onClick={()=>setNav(false)} />
-    <ul>
+    {/* <img src="/icons/cancel.png" alt="cancel" onClick={()=>setNav(false)} /> */}
+    {/* <ul>
     <li><a href="/">Home</a></li>
         <li><a href="/bookings">Book</a></li>
         <li><a href="/packeges">Packeges</a></li>
         <li><a href="/gallery">Gallery</a></li>
-    </ul>
+    </ul> */}
     </div>
 
     <div className='modal' ref={ref} style={{display:m ? "flex" : "none",backgroundColor:"white"}} >

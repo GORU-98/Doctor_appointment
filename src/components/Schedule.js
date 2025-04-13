@@ -6,7 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const host = 'http://localhost:5000';
 
 const Schedule = ({ doctorData }) => {
-  const { name, doctorId } = doctorData;
+  const doctorId=doctorData._id
+  const { doctorName } = doctorData;
   const navigate = useNavigate();
   const [appointmentDate, setDate] = useState('');
   const [time, setTime] = useState('');
@@ -33,7 +34,7 @@ const Schedule = ({ doctorData }) => {
           authtoken: token,
         },
         body: JSON.stringify({
-          doctor: name,
+          doctor: doctorName,
           appointmentDate,
           time,
           problem,
@@ -93,7 +94,7 @@ const Schedule = ({ doctorData }) => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="doctor">Doctor:</label>
-            <input type="text" id="doctor" value={name} required disabled />
+            <input type="text" id="doctor" value={doctorName} required disabled />
           </div>
           <div className="form-group">
             <label htmlFor="problem">Problem:</label>

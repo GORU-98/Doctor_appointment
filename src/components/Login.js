@@ -102,6 +102,7 @@ const handleRedirect=()=>{
                 <button type="submit" onClick={handleClick} >Sign In</button>
                 
                 <p  className='pp'>Don't have an account? <span onClick={handleRedirect}> Create Account</span></p>
+                <p  className='pp'>Register As a Doctor <span onClick={()=>navigate("/doctorsignup")}>Click here</span></p>
                 
            
             </div>

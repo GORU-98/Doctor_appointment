@@ -13,10 +13,22 @@ const Chatbot = () => {
 const fetchData= async () => {
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
-    const prompt = `${query}.give data in html form.Do not explain about the data html structure.`;
+    const prompt = `${query}.  Present the data in a suitable HTML format.  Use the most appropriate HTML structure to represent the data, prioritizing semantic accuracy and accessibility.
+
+Specifically:
+
+-   If the data is a set of distinct items or categories, use an unordered list (<ul>).
+-   If the data is a sequence of steps or a ranked list, use an ordered list (<ol>).
+-   If the data consists of terms and their definitions, use a definition list (<dl>).
+-   If the data is a table of information with rows and columns, use an HTML table (<table>) with a header row (<thead>) and body (<tbody>).
+-   If the data is a single piece of information, format it as a paragraph (<p>) or heading (<h1>-<h6>) as appropriate.
+
+Do not include any introductory or explanatory text before or after the HTML elements. The generated HTML should be well-formed, valid, and semantically correct.  If the query implies tabular data, make the first row the header row.
+`;
+
     const result = await model.generateContent(prompt);
     const responseText = await result.response.text();
-    console.log(responseText)
+    // console.log(responseText)s
     let cleanedText = responseText.replace(/```html|```json|```/g, "").trim();
     setChat(cleanedText);
   } catch (error) {

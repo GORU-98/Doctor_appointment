@@ -111,8 +111,9 @@ const Signup = () => {
           <input type="password" name='password' id='password' required value={s.password} onChange={handleChange} />
           <label htmlFor="cpassword">Confirm Password</label>
           <input type="password" name='cpassword' id='cpassword' required value={s.cpassword} onChange={handleChange} />
-          <button type="submit" onClick={handleClick}>Sign In</button>
+          <button type="submit" onClick={handleClick}>Sign Up</button>
                 <p  className='pp'>Already have a account? <span onClick={handleRedirect}> Login</span></p>
+                <p  className='pp'>Already have a account? <span onClick={()=>navigate("/doctorLogin")}> Login as a Doctor</span></p>
     
         </form>
        </section>

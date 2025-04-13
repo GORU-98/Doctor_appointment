@@ -3,13 +3,18 @@ const mongoose=require("mongoose");
 const appointmentSchema = new mongoose.Schema({
     userid:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"UserModel"
+        ref:"UserModel",
+        required:true
+    },
+    doctorId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Doctor",
+        required:true
     },
     doctor: String,
     problem:String,
     appointmentDate: String,
     time: String,
-    doctorId:Number,
     status: String,
     date:{
         type:Date,
