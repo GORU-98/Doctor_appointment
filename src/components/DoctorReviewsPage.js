@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const token = localStorage.getItem('authtoken');
@@ -8,10 +9,18 @@ const DoctorReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const navigate= useNavigate();
   useEffect(() => {
     const fetchReviews = async () => {
       try {
+        if (!token) {
+          toast.warning('Login into Your Account.', {
+            position: 'top-center',
+            theme: 'dark',
+          });
+          navigate('/login');
+          return;
+        }
         const response = await fetch(`${host}/reviews`, { 
           method: 'GET',
           headers: {
@@ -45,6 +54,7 @@ const DoctorReviewsPage = () => {
     };
 
     fetchReviews();
+     // eslint-disable-next-line
   }, []);
 
   if (loading) {

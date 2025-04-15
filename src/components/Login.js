@@ -68,9 +68,7 @@ console.log("I am here")
 
   }
 
-const handleRedirect=()=>{
-  navigate("/create-user");
-}
+
   const handleChange=(e)=>{
     setL({...l,[e.target.name]:e.target.value})
   }
@@ -88,7 +86,7 @@ const handleRedirect=()=>{
     <div className='login_page'>
       <div className="l_sec1">
        <div className="logo_nav">
-        <h1>Tourism</h1>
+        <h1>HealthCare</h1>
        </div>
         <section>
             <div className="txt">
@@ -100,9 +98,13 @@ const handleRedirect=()=>{
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" id="password" value={l.password} onChange={handleChange} required/>
                 <button type="submit" onClick={handleClick} >Sign In</button>
-                
-                <p  className='pp'>Don't have an account? <span onClick={handleRedirect}> Create Account</span></p>
-                <p  className='pp'>Register As a Doctor <span onClick={()=>navigate("/doctorsignup")}>Click here</span></p>
+                <div className='user_btn'>
+
+                <p  >Don't have an account? <span onClick={()=>  navigate("/create-user")
+}> Create Account</span></p>
+               <p  >Already have a account as a Doctor? <span onClick={()=>navigate("/doctorLogin")}> Login</span></p>
+               <p  >Register as a Doctor? <span onClick={()=>navigate("/doctorsignup")}> Register</span></p>
+</div>
                 
            
             </div>

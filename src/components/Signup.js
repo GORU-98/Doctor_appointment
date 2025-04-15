@@ -72,9 +72,7 @@ const Signup = () => {
     }
   
   
-  const handleRedirect=()=>{
-    navigate("/login");
-  }
+  
   
     const handleChange=(e)=>{
       setS({...s,[e.target.name]:e.target.value});
@@ -93,7 +91,7 @@ const Signup = () => {
     <div className='sign_page'>
       <div className="sign_sec_1">
       <div className="logo_nav">
-        <h1>Tourism</h1>
+        <h1>HealthCare</h1>
        </div>
        <section>
         <form method='POST' className='sign_form'>
@@ -112,8 +110,13 @@ const Signup = () => {
           <label htmlFor="cpassword">Confirm Password</label>
           <input type="password" name='cpassword' id='cpassword' required value={s.cpassword} onChange={handleChange} />
           <button type="submit" onClick={handleClick}>Sign Up</button>
-                <p  className='pp'>Already have a account? <span onClick={handleRedirect}> Login</span></p>
-                <p  className='pp'>Already have a account? <span onClick={()=>navigate("/doctorLogin")}> Login as a Doctor</span></p>
+
+          <div className='user_btn'>
+            
+                <p  >Already have a account? <span onClick={()=>navigate("/login")}> Login</span></p>
+                <p  >Already have a account as a Doctor? <span onClick={()=>navigate("/doctorLogin")}> Login</span></p>
+                <p  >Register as a Doctor? <span onClick={()=>navigate("/doctorsignup")}> Register</span></p>
+          </div>
     
         </form>
        </section>

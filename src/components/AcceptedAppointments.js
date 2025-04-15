@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 // import PrescriptionForm from './PrescriptionForm'
 const host = 'http://localhost:5000';
@@ -7,10 +8,18 @@ const token = localStorage.getItem('docToken');
 const AcceptedAppointments = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const navigate= useNavigate();
   useEffect(() => {
     const fetchAcceptedAppointments = async () => {
       try {
+        if (!token) {
+          toast.warning('Login into Your Account.', {
+            position: 'top-center',
+            theme: 'dark',
+          });
+          navigate('/login');
+          return;
+        }
         const response = await fetch(`${host}/appointments/accepted`, {
           headers: {
             'Content-Type': 'application/json',
@@ -33,6 +42,7 @@ const AcceptedAppointments = () => {
     };
 
     fetchAcceptedAppointments();
+     // eslint-disable-next-line
   }, []);
 
   if (loading) return <p>Loading...</p>;

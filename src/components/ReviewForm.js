@@ -30,7 +30,7 @@ const ReviewFormPopup = ({ onClose, doctorData }) => {
     
     try {
       if (!token) {
-        toast.warning('Please log in to submit a review.', {
+        toast.warning('Login into Your Account', {
           position: 'top-center',
           theme: 'dark',
         });

@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 const reportApi = require('./report'); 
 
 const ReportList = () => {
+  const token=localStorage.getItem("authtoken");
+  const navigate= useNavigate();
+useEffect(() => {
+    if (!token) {
+      navigate('/login');
+    }
+   
+    // eslint-disable-next-line
+  }, []);
   return (
     <div className="report-list">
       <h2>Patient Reports</h2>

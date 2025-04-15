@@ -198,6 +198,33 @@ app.get('/doctorappointments', fetchDoctor, async (req, res) => {
   }
 });
 
+app.patch('/appointments/:id/status', fetchDoctor, async (req, res) => {
+  const doctorId = req.client.id;
+  const { status } = req.body;
+
+  if (!['Accepted', 'Rejected'].includes(status)) {
+    return res.status(400).json({ message: 'Invalid status value' });
+  }
+
+  try {
+    const updated = await AppointmentModel.findOneAndUpdate(
+      { _id: req.params.id, doctorId: doctorId },
+      { status },
+      { new: true }
+    ).populate('userid', 'name lname email');
+
+    if (!updated) {
+      return res.status(404).json({ message: 'Appointment not found' });
+    }
+
+    return res.json(updated);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: 'Failed to update appointment status' });
+  }
+});
+
+
 app.post('/prescriptions', fetchDoctor, async (req, res) => {
   const doctorId = req.client.id;
   const { userId, treatment, medicine } = req.body;
@@ -219,34 +246,6 @@ app.post('/prescriptions', fetchDoctor, async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Failed to save prescription' });
-  }
-});
-
-app.patch('/appointments/:id/status', fetchDoctor, async (req, res) => {
-  const doctorId = req.client.id;
-  const { status } = req.body;
-// console.log(req.body)
-// console.log(doctorId)
-// console.log(req.params.id)
-  if (!['Accepted', 'Rejected'].includes(status)) {
-    return res.status(400).json({ message: 'Invalid status value' });
-  }
-
-  try {
-    const updated = await AppointmentModel.findOneAndUpdate(
-      { _id: req.params.id, doctorId: doctorId },
-      { status },
-      { new: true }
-    ).populate('userid', 'name lname email');
-// console.log(updated)
-    if (!updated) {
-      return res.status(404).json({ message: 'Appointment not found' });
-    }
-
-    // res.json(updated);
-  } catch (err) {
-    console.log(err)
-    res.status(500).json({ message: 'Failed to update appointment status' });
   }
 });
 

@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Award, Star, BookOpen, Link as LinkIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const host = 'http://localhost:5000';
 const token = localStorage.getItem('docToken');
 
 const DoctorProfilePage = () => {
   const [doctor, setDoctor] = useState(null);
+  const navigate= useNavigate();
 
   useEffect(() => {
     const fetchDoctorData = async () => {
       try {
+        if (!token) {
+          navigate('/login');
+          return;
+        }
         const res = await fetch(`${host}/doctorDetail`, {
           method: 'GET',
           headers: {
@@ -25,6 +31,7 @@ const DoctorProfilePage = () => {
     };
 
     fetchDoctorData();
+     // eslint-disable-next-line
   }, []);
 
   if (!doctor) return <div className="doctor-profile">Loading...</div>;

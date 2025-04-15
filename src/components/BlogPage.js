@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import healthBlogs from './healthBlogs'; 
 
 
 const BlogPage = () => {
+  
+const token=localStorage.getItem("authtoken");
+const navigate= useNavigate();
+
+  useEffect(()=>{
+    if (!token) {
+      navigate('/login');
+      return;
+    }
+     // eslint-disable-next-line
+},[])
   return (
     <div className="blog-page">
       <h1>Health Blogs</h1>

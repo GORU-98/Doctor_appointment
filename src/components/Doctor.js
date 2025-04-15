@@ -16,6 +16,14 @@ const navigate=useNavigate()
   useEffect(() => {
     const fetchDoctor = async () => {
       try {
+        if (!token) {
+          toast.warning('Login into Your Account.', {
+            position: 'top-center',
+            theme: 'dark',
+          });
+          navigate('/login');
+          return;
+        }
         const response = await fetch(`${host}/doctorDetail`, {
           method: 'GET',
           headers: {
@@ -45,6 +53,14 @@ const navigate=useNavigate()
 
     const fetchAppointmentCounts = async () => {
       try {
+        if (!token) {
+          toast.warning('Login into Your Account.', {
+            position: 'top-center',
+            theme: 'dark',
+          });
+          navigate('/login');
+          return;
+        }
         const res = await fetch(`${host}/appointments/counts`, {
           headers: {
             'Content-Type': 'application/json',
@@ -62,7 +78,7 @@ const navigate=useNavigate()
     };
     
     fetchAppointmentCounts();
-    
+     // eslint-disable-next-line
   }, []);
 
   if (loading) {
@@ -98,10 +114,7 @@ const navigate=useNavigate()
             <h3>Requests</h3>
             <p>{counts.pendingCount} Pending Approvals</p>
           </div>
-          <div className="card">
-            <h3>Notifications</h3>
-            <p>2 New Alerts</p>
-          </div>
+         
         </section>
       </main>
       <ToastContainer />

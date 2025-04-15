@@ -3,16 +3,30 @@ import DoctorCard from './DoctorCard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 const token = localStorage.getItem('authtoken');
-const DoctorList = () => {
-  const [doctors, setDoctors] = useState([]);
 
+
+const DoctorList = () => {
+
+  const [doctors, setDoctors] = useState([]);
+  const navigate= useNavigate();
   useEffect(() => {
     fetchDoctors();
+     // eslint-disable-next-line
   }, []);
 
   const fetchDoctors = async () => {
     try {
+
+      if (!token) {
+        toast.warning('Login into Your Account.', {
+          position: 'top-center',
+          theme: 'dark',
+        });
+        navigate('/login');
+        return;
+      }
       const response = await fetch('http://localhost:5000/doctors', { 
         method: 'GET',
         headers: {

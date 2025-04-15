@@ -42,7 +42,7 @@ const ViewAppoint = () => {
 
         const result = await res.json();
         setLoading(false);
-
+        console.log(result)
         if (result.status === 202) {
           setAppointments(result.data);
         } else {
@@ -99,7 +99,7 @@ const ViewAppoint = () => {
   if (loading) {
     return <div className="loading">Loading appointments...</div>;
   }
-
+ 
   return (
     <div className="appointment-list-page">
       <h1>Your Appointments</h1>
@@ -107,9 +107,9 @@ const ViewAppoint = () => {
         {appointments.map((appointment) => (
           <div key={appointment._id} className="appointment-card">
             <div className="status-banner">
-              {appointment.status === 'accepted' ? (
+              {appointment.status === 'Accepted' ? (
                 <span className="accepted">Accepted</span>
-              ) : appointment.status === 'rejected' ? (
+              ) : appointment.status === 'Rejected' ? (
                 <span className="rejected">Rejected</span>
               ) : (
                 <span className="pending">Pending</span>

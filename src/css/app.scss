@@ -729,7 +729,16 @@ margin-top: 1.5rem;
 }
 
 
-
+.user_btn{
+  // text-align: center;
+  margin-top: 1rem;
+  p{
+    margin: 0%;
+    margin-top: 0.6rem;
+    cursor: pointer;
+    color: rgb(53, 39, 39);
+  }
+}
 
 // doctor page
 
@@ -751,8 +760,12 @@ margin-top: 1.5rem;
     font-size: 1.6rem;
     font-weight: bold;
     margin: 0;
-    margin-bottom: 12rem; // 🔽 reduce this to control gap
-    text-align: center;
+    margin-bottom: 8rem; 
+    // text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     color: #00b894;
   }
 
@@ -760,7 +773,9 @@ margin-top: 1.5rem;
     ul {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem; // 🔽 reduce if needed
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0.4rem; // 
       padding: 0;
       margin: 0;
 
@@ -1890,4 +1905,15 @@ h1{margin-bottom: 2rem;}
 }
 
 
+.div8{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 2rem !important;
+  font-size: 0.9rem !important;
+  padding-top: 0rem !important;
+  padding-left: 3rem !important;
+  color: #0056b3;
 
+  h1{
+    margin: 0% !important;
+  }
+}
