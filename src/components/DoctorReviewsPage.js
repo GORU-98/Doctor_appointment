@@ -87,8 +87,12 @@ const DoctorReviewsPage = () => {
             <div key={review._id} className="review-card">
               <div className="review-header">
               <h3>
-  Reviewed By: {`${capitalize(review.user.name)} ${capitalize(review.user.lname)}`}
+  Reviewed By:{' '}
+  {review.user
+    ? `${capitalize(review.user.name)} ${capitalize(review.user.lname)}`
+    : 'Unknown User'}
 </h3>
+
 
                 <p className="rating">Rating: {review.rating} / 5</p>
               </div>

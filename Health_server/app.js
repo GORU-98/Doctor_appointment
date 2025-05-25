@@ -455,7 +455,9 @@ app.get("/appointments", fetchuser, async (req, res) => {
       if(!reviews){
        return res.send("No review found");
       }
-      const formattedReviews = reviews.map(review => ({
+      const formattedReviews = reviews
+      .filter(review => review.userId) // skip null userId
+      .map(review => ({
         _id: review._id,
         doctorId: review.doctorId,
         rating: review.rating,
@@ -473,6 +475,7 @@ app.get("/appointments", fetchuser, async (req, res) => {
         },
         createdAt: review.createdAt,
       }));
+    
   console.log(formattedReviews)
       res.status(200).json(formattedReviews);
     } catch (err) {
